@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+.DS_STORE
+
+#Specific to project
+xml2html
+outputBadInputFail.txt
+outputNoInputFail.txt
+test/cd_catalog.html
+test/different_col_count.html	
