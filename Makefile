@@ -30,13 +30,16 @@ CPP_OBJS := $(patsubst %.cpp,%.o, $(CPP_SRCFILES))
 
 all : ${EXEC}
 
+MakeLib:
+	cd libs/tinyxml2 && make
+
 %.o: %.cpp
 	$(CXX) $(COMPILEOPTIONS) $(INCLUDE) -c -o $@ $<
 
 %.o: %.c
 	$(CC) $(COMPILEOPTIONS) $(INCLUDE) -c -o $@ $<
-
-${MAIN} : xml2html.cpp table.cpp row.cpp
+ 
+${MAIN} : xml2html.cpp table.cpp row.cpp MakeLib
 	${CXX} ${COMPILEOPTIONS} $(INCLUDE) -c $< -o $@ $(LIBB)/libtinyxml2.a
  
 ${EXEC} : ${OBJECTS} main.cpp $(CPP_OBJS)
