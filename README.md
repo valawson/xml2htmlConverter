@@ -30,6 +30,7 @@ The above XML code would result in a table in this format in HTML:
 
 ## Building
 
+The build has been tested on MacOS. It should work on Windows but, has not been tested at this time. 
 To build use the command:
 
     make
